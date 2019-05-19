@@ -1,0 +1,12 @@
+package: myhouse-notification-speaker
+revision: 1
+version: development
+git: myhouse-project/myhouse-notification-speaker
+modules:
+  - notification/speaker
+default_config:
+  - notification/speaker:
+      device: ""
+      engine: google
+      mute: 23-11
+      mute_min_severity: alert
