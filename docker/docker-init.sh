@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SETUP_DIR="./init"
+SETUP_DIR="./docker"
 
 if [ -n "$BLUETOOTH_SPEAKER" -a "$BLUETOOTH_SPEAKER" = "1" ]; then
     $SETUP_DIR/setup_bluetooth_audio.sh
