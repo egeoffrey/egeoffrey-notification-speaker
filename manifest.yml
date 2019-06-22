@@ -1,7 +1,14 @@
 package: myhouse-notification-speaker
 revision: 3
 version: development
-git: myhouse-project/myhouse-notification-speaker
+github: myhouse-project/myhouse-notification-speaker
+dockerhub: myhouse-project/myhouse-notification-speaker
+container_config:
+  environment:
+    - "BLUETOOTH_SPEAKER=1"
+    - "SPEAKER_MAC_ADDRESS=F5:B6:AB:45:63:C6"
+    - "SPEAKER_VOLUME=100%"
+description: Play a notification out loud through an attached speaker
+tags: notification speaker voice
 modules:
   - notification/speaker
-
