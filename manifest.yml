@@ -2,7 +2,7 @@ package: myhouse-notification-speaker
 revision: 3
 version: development
 github: myhouse-project/myhouse-notification-speaker
-dockerhub: myhouse-project/myhouse-notification-speaker
+dockerhub: myhouseproject/myhouse-notification-speaker
 container_config:
   environment:
     - "BLUETOOTH_SPEAKER=1"
