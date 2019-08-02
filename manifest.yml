@@ -1,17 +1,17 @@
-manifest_schema: 1
-package: myhouse-notification-speaker
-revision: 4
-version: development
-github: myhouse-project/myhouse-notification-speaker
-dockerhub: myhouseproject/myhouse-notification-speaker
+branch: development
 container_config:
   environment:
-    - "BLUETOOTH_SPEAKER=1"
-    - "SPEAKER_MAC_ADDRESS=F5:B6:AB:45:63:C6"
-    - "SPEAKER_VOLUME=100%"
+  - BLUETOOTH_SPEAKER=1
+  - SPEAKER_MAC_ADDRESS=F5:B6:AB:45:63:C6
+  - SPEAKER_VOLUME=100%
 description: Play a notification out loud through an attached speaker
-tags: notification speaker voice
+dockerhub: myhouseproject/myhouse-notification-speaker
+github: myhouse-project/myhouse-notification-speaker
+manifest_schema: 2
 modules:
-  - notification/speaker:
-      description: Play a notification out loud through an attached speaker
-
+- notification/speaker:
+    description: Play a notification out loud through an attached speaker
+package: myhouse-notification-speaker
+revision: 5
+tags: notification speaker voice
+version: 1.0
