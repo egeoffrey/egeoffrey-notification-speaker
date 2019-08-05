@@ -8,11 +8,12 @@ container_config:
 description: Play a notification out loud through an attached speaker
 dockerhub: myhouseproject/myhouse-notification-speaker
 github: myhouse-project/myhouse-notification-speaker
+icon: volume-up
 manifest_schema: 2
 modules:
 - notification/speaker:
     description: Play a notification out loud through an attached speaker
 package: myhouse-notification-speaker
-revision: 7
+revision: 8
 tags: notification speaker voice
 version: 1.0
