@@ -13,6 +13,6 @@ modules:
 - notification/speaker:
     description: Play a notification out loud through an attached speaker
 package: myhouse-notification-speaker
-revision: 6
+revision: 7
 tags: notification speaker voice
 version: 1.0
