@@ -6,14 +6,14 @@ container_config:
   - SPEAKER_VOLUME=100%
   network_mode: host
 description: Play a notification out loud through an attached speaker
-dockerhub: myhouseproject/myhouse-notification-speaker
-github: myhouse-project/myhouse-notification-speaker
+dockerhub: egeoffrey/egeoffrey-notification-speaker
+github: egeoffrey/egeoffrey-notification-speaker
 icon: volume-up
 manifest_schema: 2
 modules:
 - notification/speaker:
     description: Play a notification out loud through an attached speaker
-package: myhouse-notification-speaker
-revision: 8
+package: egeoffrey-notification-speaker
+revision: 9
 tags: notification speaker voice
 version: 1.0

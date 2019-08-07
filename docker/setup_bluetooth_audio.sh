@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "[\e[33mmyHouse\e[0m] Configuring bluetooth audio..."
+echo -e "[\e[33meGeoffrey\e[0m] Configuring bluetooth audio..."
 echo "default-server = /var/run/pulse/native" >> /etc/pulse/client.conf
 echo "autospawn = no" >> /etc/pulse/client.conf
 echo "flat-volumes = no" >> /etc/pulse/daemon.conf
