@@ -36,7 +36,7 @@ class Speaker(Notification):
         
     # play an audio file
     def play(self, filename):
-        device = "-t alsa "+str(self.config["device"]) if self.config["device"] != "" else ""
+        device = "-t alsa "+str(self.config["device"]) if self.config["device"] is not None else ""
         self.log_debug(sdk.python.utils.command.run("play "+filename+" "+device, background=False))
 
    # What to do when ask to notify
@@ -67,5 +67,5 @@ class Speaker(Notification):
         if message.args == self.fullname and not message.is_null:
             if message.config_schema != self.config_schema: 
                 return False
-            if not self.is_valid_configuration(["device", "engine"], message.get_data()): return False
+            if not self.is_valid_configuration(["engine"], message.get_data()): return False
             self.config = message.get_data()

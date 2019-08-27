@@ -13,7 +13,18 @@ manifest_schema: 2
 modules:
 - notification/speaker:
     description: Play a notification out loud through an attached speaker
+    module_configuration:
+    - description: The text-to-speach engine to use
+      format: google|picotts
+      name: engine
+      placeholder: user@email.com
+      required: true
+    - description: The ALSA device the speaker is attached to
+      format: string
+      name: device
+      placeholder: plughw:1,0
+      required: false
 package: egeoffrey-notification-speaker
-revision: 9
+revision: 10
 tags: notification speaker voice
 version: 1.0
