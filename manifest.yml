@@ -1,9 +1,5 @@
 branch: development
 container_config:
-  environment:
-  - BLUETOOTH_SPEAKER=1
-  - SPEAKER_MAC_ADDRESS=F5:B6:AB:45:63:C6
-  - SPEAKER_VOLUME=100%
   network_mode: host
 description: Play a notification out loud through an attached speaker
 dockerhub: egeoffrey/egeoffrey-notification-speaker
@@ -24,7 +20,21 @@ modules:
       name: device
       placeholder: plughw:1,0
       required: false
+    - description: Weather the speaker has to be connected through bluetooth
+      format: checkbox
+      name: bluetooth_speaker
+      required: true
+    - description: The MAC address of the bluetooth speaker
+      format: string
+      name: bluetooth_speaker_mac_address
+      placeholder: F5:B6:AB:45:63:C6
+      required: false
+    - description: The volume to set to the speaker
+      format: string
+      name: bluetooth_speaker_mac_address
+      placeholder: 100
+      required: false
 package: egeoffrey-notification-speaker
-revision: 10
+revision: 11
 tags: notification speaker voice
 version: 1.0

@@ -28,8 +28,24 @@ class Speaker(Notification):
 
     # What to do when running
     def on_start(self):
-        pass
-        
+        # if it is a bluetooth speaker, setup bluetooth first
+        if self.config["bluetooth_speaker"]:
+            self.log_info("Configuring bluetooth audio...")
+            self.log_debug(sdk.python.utils.command.run("setup/setup_bluetooth_audio.sh"))
+            self.log_info("Starting bluetooth...")
+            self.log_debug(sdk.python.utils.command.run("setup/start_bluetooth.sh"))
+        # start the pulseaudio daemon
+        self.log_info("Starting audio daemon...")
+        self.log_debug(sdk.python.utils.command.run("setup/start_pulseaudio.sh"))
+        # if it is a bluetooth speaker, connect to it
+        if self.config["bluetooth_speaker"]:
+            self.log_info("Connecting to bluetooth speaker "+self.config["bluetooth_speaker_mac_address"]+"...")
+            self.log_debug(sdk.python.utils.command.run("setup/connect_bluetooth_speakers.exp "+self.config["bluetooth_speaker_mac_address"]))
+        # set up speaker volume
+        if "speaker_volume" in self.config:
+            self.log_info("Setting speaker volume to "+self.config["speaker_volume"]+"%...")
+            self.log_debug(sdk.python.utils.command.run("setup/set_volume.sh "+self.config["speaker_volume"]+"%"))
+            
     # What to do when shutting down
     def on_stop(self):
         pass
@@ -67,5 +83,5 @@ class Speaker(Notification):
         if message.args == self.fullname and not message.is_null:
             if message.config_schema != self.config_schema: 
                 return False
-            if not self.is_valid_configuration(["engine"], message.get_data()): return False
+            if not self.is_valid_configuration(["engine", "bluetooth_speaker"], message.get_data()): return False
             self.config = message.get_data()

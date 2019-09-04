@@ -1,4 +1,8 @@
 device: ""
 engine: google
-mute: 23-11
-mute_min_severity: alert
+bluetooth_speaker: false
+bluetooth_speaker_mac_address: F5:B6:AB:45:63:C6
+speaker_volume: 100
+suppress:
+  timeframe: 23-11
+  timeframe_severity_exception: alert
