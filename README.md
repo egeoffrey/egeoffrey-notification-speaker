@@ -66,4 +66,4 @@ notification speaker voice
 
 ## Version
 
-The version of this egeoffrey-notification-speaker is 1.0-18 on the master branch.
+The version of this egeoffrey-notification-speaker is 1.0-19 on the master branch.
